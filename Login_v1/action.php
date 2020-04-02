@@ -1,8 +1,8 @@
 <?php
 	include("getConnect.php");
 
-	$name=$_Post['name'];
-	$pass=$_Post["pass"];
+	$name=$_POST['name'];
+	$pass=$_POST["pass"];
 
 	$sql="select * from tblaccount where _name ='$name' and _pass='$pass'";
 	$result= pg_query($conn,$sql);
