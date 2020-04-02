@@ -4,7 +4,7 @@
 	if(!$conn){
 		echo "đm đ kết nối đc";
 	}else{
-		echo "Đăng nhập thành công";
+		echo "Kết nối thành công";
 	}
 
 //Save vào cho tao 
