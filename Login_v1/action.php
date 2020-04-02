@@ -1,16 +1,17 @@
 <?php
 	include("getConnect.php");
 
-	$Username=$_Post['name'];
-	$Password=$_Post["pass"];
+	$name=$_Post['name'];
+	$pass=$_Post["pass"];
 
-	$sql="select * from tblaccount where _name ='admin' and _pass='123'";
+	$sql="select * from tblaccount where _name ='$name' and _pass='$pass'";
 	$result= pg_query($conn,$sql);
 
 	if(pg_fetch_row($result)){
 		echo ' Đăng nhập được rồi!!';
 		header('location:home.php');
 	}else{
-		echo ' Đ được';
+		echo ' Đ được ';
+		echo $sql;
 	}
 ?>
