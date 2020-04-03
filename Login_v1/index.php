@@ -14,12 +14,12 @@
 
 	$sql="select * from tblaccount where _name ='$name' and _pass='$pass'";
 	$result = pg_query($conn,$sql);
-
+	echo $sql;
 	$row=pg_fetch_row($result);
+	echo $row[0];
 
 
-	if(isset($_POST['submit'])){
-		if($row[0] == $name && $row[1] == $pass){
+		if(pg_fetch_row($result)){
 			echo ' Đăng nhập được rồi!!';
 			header('location:home.php');
 		}else
@@ -27,8 +27,7 @@
 			echo ' Đ được ';
 			echo $sql;
 		}
-	}
-
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
