@@ -11,10 +11,10 @@
 
 	$name=$_POST["name"];
 	$pass=$_POST["pass"];
-
+	echo $name;
+	echo $pass;
 	$sql="select * from tblaccount where _name ='$name' and _pass='$pass'";
 	$result = pg_query($conn,$sql);
-	echo $sql;
 	$row=pg_fetch_row($result);
 	echo $row[0];
 
