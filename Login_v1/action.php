@@ -17,11 +17,9 @@
 
 		if(($row[0]==$name)&&($row[1]==$pass)){
 			echo ' Đăng nhập được rồi!!';
-			header('location:index.php');
 		}else
 		{
-			echo ' Đ được ';
-			echo $sql;
+			header('location:index.php');
 		}
 	
 ?>
