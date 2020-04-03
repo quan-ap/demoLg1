@@ -21,7 +21,8 @@
 
 		if(pg_fetch_row($result)){
 			echo ' Đăng nhập được rồi!!';
-			header('location:home.php');
+			//header('location:home.php');
+			echo $sql;
 		}else
 		{
 			echo ' Đ được ';
