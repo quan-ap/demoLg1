@@ -1,5 +1,35 @@
+
 <?php
-//Tạo cho tao file action
+	
+	$connection_string= "host=ec2-50-17-90-177.compute-1.amazonaws.com port=5432 dbname=d407vgcnrpaf5a user=hpowntnstdvtxn password=ce575d94c9186dcebf41700064bf46466a94e1e5e1e1c5d40819dbbe9bd8ddf2";
+	//$conn=pg_connect($connection_string);
+	if(!$connection_string){
+		echo "đm đ kết nối đc";
+	}else{
+		echo "Kết nối thành công";
+	}
+
+	$name=$_POST["name"];
+	$pass=$_POST["pass"];
+
+	$sql="select * from tblaccount where _name ='$name' and _pass='$pass'";
+	$result = pg_query($conn,$sql);
+
+	$row=pg_fetch_array($result);
+
+
+	if(isset($_POST['submit'])){
+		if($row['name'] == $name && $row['pass'] == $pass){
+			echo ' Đăng nhập được rồi!!';
+			header('location:home.php');
+		}else
+		{
+			echo ' Đ được ';
+			echo $sql;
+		}
+	}
+	//ngu
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +63,7 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form action="action.php" method="POST" class="login100-form validate-form">
+				<form action="home.php" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title">
 						Member Login
 					</span>
