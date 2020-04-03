@@ -11,8 +11,6 @@
 
 	$name=$_POST["name"];
 	$pass=$_POST["pass"];
-	echo $name;
-	echo $pass;
 	$sql="select * from tblaccount where _name ='$name' and _pass='$pass'";
 	$result = pg_query($conn,$sql);
 	$row=pg_fetch_row($result);
@@ -21,8 +19,7 @@
 
 		if(pg_fetch_row($result)){
 			echo ' Đăng nhập được rồi!!';
-			//header('location:home.php');
-			echo $sql;
+			header('location:home.php');
 		}else
 		{
 			echo ' Đ được ';
@@ -62,7 +59,7 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form action="home.php" method="POST" class="login100-form validate-form">
+				<form action="#" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title">
 						Member Login
 					</span>
