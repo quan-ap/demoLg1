@@ -9,11 +9,11 @@ $connection_string= "host=ec2-50-17-90-177.compute-1.amazonaws.com port=5432 dbn
 
 	//select
 $sql="select _category,_name,_price,_img from tblproduct";
-$result = $conn->pg_query($sql);
+$result = pg_query($conn, $sql);
 if(pg_num_rows(result)>0){
 	echo "<table><tr><th>ID</th><th>Name</th></tr>";
 	while($row = pg_fetch_row($result)) {
-        echo "<tr><td>".$row["_category"]."</td><td>".$row["_name"]." ".$row["_price"]." ".$row["_img"]."</td></tr>";
+        echo "<tr><td>".$row[0]."</td><td>".$row[1]." ".$row[2]." ".$row[3]."</td></tr>";
     }
     echo "</table>";
 }else {
