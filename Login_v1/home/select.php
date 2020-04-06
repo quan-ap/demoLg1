@@ -3,7 +3,7 @@
 require '../conect.php';
 
 	//select
-$sql="select _category,_name,_price,_img from tblproduct";
+$sql="select * _category,_name,_price,_img from tblproduct";
 $result = pg_query($conn, $sql);
 
 	while($row = pg_fetch_row($result) {
